@@ -7,9 +7,12 @@ define(['backbone'], function(Backbone) {
                 this.renderImage();
             }
 
-            this.$el.append(
-                '<h1>' + this.model.get('title') + '</h1>'
-            );
+            else if (this.model.get('bullets')) {
+                this.renderBullets();
+            }
+
+            else 
+                this.renderHeading();
 
             return this;
         },
@@ -18,7 +21,31 @@ define(['backbone'], function(Backbone) {
             this.$el
                 .addClass('image')
                 .append('<img src="' + this.model.get('image') + '">');
+        },
+
+        renderBullets: function() {
+            var el = this.$el;
+
+            el.addClass('bullets')
+
+                if (this.model.get('title')) {
+                    el.append('<h1>' + this.model.get('title') + '</h1>')
+                }
+
+                el.append([
+                    '<ul>',
+                    '<li>' + this.model.get('bullets').join('</li><li>'),
+                    '</ul>'])
+        },
+
+        renderHeading: function() {
+
+            this.$el.append(
+                '<h1 class=' +this.model.get('size') + '>' + this.model.get('title') + '</h1>'
+            );
+
         }
+
 
     });
 
