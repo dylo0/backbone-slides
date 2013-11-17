@@ -11,6 +11,10 @@ define(['backbone'], function(Backbone) {
                 this.renderBullets();
             }
 
+            else if (this.model.get('quote')) {
+                this.renderQuote();
+            }
+
             else 
                 this.renderHeading();
 
@@ -21,6 +25,23 @@ define(['backbone'], function(Backbone) {
             this.$el
                 .addClass('image')
                 .append('<img src="' + this.model.get('image') + '">');
+        },
+
+        renderQuote: function() {
+            this.$el
+                .addClass('quote')
+                .append([
+                    '<figure>',
+                        '<blockquote>',
+                          this.model.get('quote'),
+                        '</blockquote>',
+                        '<figcaption>',
+                            '<cite>',
+                              this.model.get('cite'),
+                            '</cite>',
+                        '</figcaption>',
+                    '</figure>'
+                    ].join(''));
         },
 
         renderBullets: function() {
