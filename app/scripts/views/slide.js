@@ -3,12 +3,23 @@ define(['backbone'], function(Backbone) {
         className: 'slide',
 
         render: function() {
+            if (this.model.get('image')) {
+                this.renderImage();
+            }
+
             this.$el.append(
                 '<h1>' + this.model.get('title') + '</h1>'
             );
 
             return this;
+        },
+
+        renderImage: function() {
+            this.$el
+                .addClass('image')
+                .append('<img src="' + this.model.get('image') + '">');
         }
+
     });
 
     return Slide;
