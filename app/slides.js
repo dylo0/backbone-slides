@@ -1,6 +1,5 @@
 window.slides = [
 	{title: "My Presentation"},
-	{title: "hello there"},
 	
 	{title: "slide no 3 loremypsum lorem dolor srataatata slide no 3 loremypsum lorem dolor srataatata slide no 3 loremypsum lorem dolor srataatata "},
 	
@@ -12,5 +11,13 @@ window.slides = [
 	snippet: 'snippets/ex1.js'},
 
 	{quote: 'lorem ipsum dolor', 
-	 cite: 'Srata tata'}]
+	 cite: 'Srata tata'},
+
+	{snippet: {
+		'JavaScript': 'snippets/ex1.js',
+		'css': 'snippets/ex1.css'
+		
+		}
+	}
+]
 
