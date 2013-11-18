@@ -1,28 +1,34 @@
-define(['backbone'], function(Backbone) {
+define(['backbone', 'helpers'], function(Backbone, Helpers) {
     var Slide = Backbone.View.extend({
         className: 'slide',
 
         render: function() {
+            var contentType = this.getConentType();
+
+            this['render' + Helpers.capitalize(contentType)]();
+
+            return this;
+        },
+
+        getConentType: function() {
             if (this.model.get('image')) {
-                this.renderImage();
+                return 'image';
             }
 
             else if (this.model.get('snippet')) {
-                this.renderSnippet();
+                return 'snippet';
             }
 
             else if (this.model.get('bullets')) {
-                this.renderBullets();
+                return 'snippet';
             }
 
             else if (this.model.get('quote')) {
-                this.renderQuote();
+                return 'snippet';
             }
 
             else 
-                this.renderHeading();
-
-            return this;
+                return 'heading';
         },
 
         renderImage: function() {
