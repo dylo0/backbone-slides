@@ -9,8 +9,8 @@ window.slides = [
 	{bullets: ['point 1', 'point 2', 'point 3']},
 	
 	{title: 'my test code',
-	snippet: 'ecample code'}
+	snippet: 'snippets/ex1.js'},
 
 	{quote: 'lorem ipsum dolor', 
-	 cite: 'Srata tata'}
+	 cite: 'Srata tata'}]
 

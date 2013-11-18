@@ -7,6 +7,10 @@ define(['backbone'], function(Backbone) {
                 this.renderImage();
             }
 
+            else if (this.model.get('snippet')) {
+                this.renderSnippet();
+            }
+
             else if (this.model.get('bullets')) {
                 this.renderBullets();
             }
@@ -25,6 +29,29 @@ define(['backbone'], function(Backbone) {
             this.$el
                 .addClass('image')
                 .append('<img src="' + this.model.get('image') + '">');
+        },
+
+        renderSnippet: function() {
+            var self = this;
+            var snippet = this.model.get('snippet');
+
+            this.$el.addClass('snippet');
+            
+            if (this.model.get('title')) {
+                this.renderHeading();
+            }
+
+            $.get(snippet, function(snippet) {
+
+
+                self.$el
+                    .append('<pre class="prettyprint">' + _.escape(snippet) + '</pre>');
+
+            prettyPrint();
+            
+            });
+
+
         },
 
         renderQuote: function() {
