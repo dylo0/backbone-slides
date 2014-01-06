@@ -14,7 +14,6 @@ define(['backbone', 'helpers'], function(Backbone, Helpers) {
             if (this.model.get('image')) {
                 return 'image';
             }
-
             else if (this.model.get('snippet')) {
                 return 'snippet';
             }

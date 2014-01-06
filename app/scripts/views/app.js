@@ -32,5 +32,3 @@ define(['backbone',
     return AppView;
 })
 
-
-    
