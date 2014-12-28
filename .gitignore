@@ -3,3 +3,4 @@ dist
 components
 app/components
 .sass-cache
+node_modules/**/*

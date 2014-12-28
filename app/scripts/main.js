@@ -1,15 +1,15 @@
 require.config({
   shim: {
   	"backbone": {
-  		deps: ["../components/underscore/underscore", "jquery"],
+  		deps: ["../bower_components/underscore/underscore", "jquery"],
   		exports: "Backbone"
   	}
   },
 
   paths: {
     jquery: 'vendor/jquery.min',
-    backbone: '../components/backbone/backbone',
-    prettify: '../components/google-code-prettify/src/prettify'
+    backbone: '../bower_components/backbone/backbone',
+    prettify: '../bower_components/google-code-prettify/src/prettify'
   }
 });
 
